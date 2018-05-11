@@ -60,7 +60,7 @@ bot.on(['/w', '/weather'], function (msg) {
       });   
 });
 bot.on(['/8ball', '/8balls'], function (msg) {
-	var truc = ["I can't say anything", "<:8ball:404631321651052545> It seems like yes...", "<:8ball:404631321651052545> Everything say no...", "<:8ball:404631321651052545> visibly, yes", "<:8ball:404631321651052545> no !"];
+	var truc = ["I can't say anything", "It seems like yes...", "Everything say no...", "visibly, yes", "no !"];
 	var truc2 = Math.floor(Math.random()*truc.length);
     msg.reply.text(truc[truc2]);
 })
