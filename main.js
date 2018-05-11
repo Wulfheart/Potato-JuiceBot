@@ -34,6 +34,13 @@ bot.on(['/c', '/cat'], function (msg) {
     });
 
 });
+bot.on(['/d', '/dog'], function (msg) {
+
+    req("https://random.dog/woof.json", function (err, response, body) {
+        let dog = JSON.parse(body)
+        msg.reply.text(dog.url);
+      });   
+});
 bot.on(['/w', '/weather'], function (msg) {
     const city = msg.text.split(' ')[1];
 
