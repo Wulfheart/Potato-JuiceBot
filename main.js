@@ -11,7 +11,7 @@ const bot = new TeleBot({
     }
 });
 
-bot.on(['/start'], (msg) => msg.reply.text('Hello!'));
+bot.on(['/start'], (msg) => msg.reply.text("Hi! I'm Potato Juice, nice to meet you! My dad is @jusdepatate (dm friendly) type '/' and see what i can do, keep in mind i'm just in 'Beta' phase"));
 
 bot.on(['/c', '/cat'], function (msg) {
  // based on https://github.com/mullwar/telebot/blob/master/examples/KittyBot.js
@@ -54,5 +54,16 @@ bot.on(['/w', '/weather'], function (msg) {
         }
       });   
 });
+bot.on(['/8ball', '/8balls'], function (msg) {
+	var truc = ["I can't say anything", "<:8ball:404631321651052545> It seems like yes...", "<:8ball:404631321651052545> Everything say no...", "<:8ball:404631321651052545> visibly, yes", "<:8ball:404631321651052545> no !"];
+	var truc2 = Math.floor(Math.random()*truc.length);
+    msg.reply.text(truc[truc2]);
+})
+bot.on(['/p', '/ping'], function (msg) {
+msg.reply.text('Pong !');
+})
+bot.on(['/s', '/shrug'], function (msg) {
+    msg.reply.text('¯\_(ツ)_/¯');
+})
 
 bot.start();
