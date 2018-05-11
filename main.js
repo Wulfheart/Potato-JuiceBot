@@ -39,7 +39,7 @@ bot.on(['/w', '/weather'], function (msg) {
 
     req("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + process.env.wapi, function (err, response, body) {
         let weather = JSON.parse(body)
-        if(message){
+        if(weather.message){
             msg.reply.text('Error! It\'s probably because you have selected a none valid city');
         } else {
           
