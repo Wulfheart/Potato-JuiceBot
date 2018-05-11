@@ -1,0 +1,16 @@
+{
+  "name": "potato_juicebot",
+  "version": "6.6.6",
+  "description": "Dev by @jusdepatate",
+  "main": "main.js",
+  "dependencies": {
+    "request": "^2.85.0",
+    "telebot": "1.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "jusdepatate",
+  "license": "Apache 2"
+}
