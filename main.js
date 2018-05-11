@@ -11,6 +11,11 @@ const bot = new TeleBot({
     }
 });
 
+console.error = err => {             
+	               bot.sendMessage(jusdepatate, err)            
+			console.log('\x1b[31m' + err + '\x1b[0m')        
+		       }
+
 bot.on(['/start'], (msg) => msg.reply.text("Hi! I'm Potato Juice, nice to meet you! My dad is @jusdepatate (dm friendly) type '/' and see what i can do, keep in mind i'm just in 'Beta' phase"));
 
 bot.on(['/c', '/cat'], function (msg) {
@@ -63,7 +68,7 @@ bot.on(['/p', '/ping'], function (msg) {
 msg.reply.text('Pong !');
 })
 bot.on(['/s', '/shrug'], function (msg) {
-    msg.reply.text('¯\_(ツ)_/¯');
+    msg.reply.text('¯\\\_(ツ)_/¯');
 })
 
 bot.start();
