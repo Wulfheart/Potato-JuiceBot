@@ -43,12 +43,12 @@ bot.on(['/d', '/dog'], function (msg) {
 
     req("https://random.dog/woof.json", function (err, response, body) {
         let dog = JSON.parse(body)
-        msg.reply.text(dog.url);
+	bot.sendPhoto(msg.chat.id, dog.url);
       });   
 });
 bot.on(['/w', '/weather'], function (msg) {
     const city = msg.text.split(' ')[1];
-
+	
     req("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + process.env.wapi, function (err, response, body) {
         let weather = JSON.parse(body)
         if(weather.message){
@@ -73,4 +73,5 @@ bot.on(['/s', '/shrug'], function (msg) {
 bot.on(['/u', '/update'], function (msg) {
 	msg.reply.text('You can see all updates here @Potato_JuiceUpdate') 
 }) 
+
 bot.start();
