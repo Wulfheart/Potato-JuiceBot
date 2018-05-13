@@ -46,7 +46,7 @@ bot.on(['/cnj', '/ChuckNorrisJoke'], function (msg) {
     req("http://api.icndb.com/jokes/random", function (err, response, body) {
 	let id = msg.chat.id;
         let jokes = JSON.parse(body)
-	bot.sendMessage(id, 'Here is your Chuck Norris jokes:\n' jokes.value.joke);
+	bot.sendMessage(id, 'Here is your Chuck Norris jokes:\n' + jokes.value.joke);
       });   
 });
 bot.on(['/xkcd'], function (msg) {
