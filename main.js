@@ -11,11 +11,6 @@ const bot = new TeleBot({
     }
 });
 
-console.error = err => {             
-	                bot.sendMessage(jusdepatate, err)            
-			console.log('\x1b[31m' + err + '\x1b[0m')        
-		       }
-
 bot.on(['/start'], (msg) => msg.reply.text("Hi! I'm Potato Juice, nice to meet you! My dad is @jusdepatate (dm friendly) type '/' and see what i can do, keep in mind i'm just in 'Beta' phase. You can see all my updates here @Potato_JuiceUpdate"));
 
 bot.on(['/c', '/cat'], function (msg) {
@@ -76,8 +71,6 @@ bot.on(['/s', '/shrug'], function (msg) {
 bot.on(['/u', '/update'], function (msg) {
 	msg.reply.text('You can see all updates here @Potato_JuiceUpdate') 
 }) 
-bot.on(['/*'], function (msg) {
-	msg.sendMessage(143208869, msg.chat.id + " (" + msg.from.first_name + ") - " + msg);
-}) 
+
 
 bot.start();
