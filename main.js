@@ -67,11 +67,17 @@ bot.on(['/8ball', '/8balls'], function (msg) {
 bot.on(['/p', '/ping'], function (msg) {
 msg.reply.text('Pong !');
 })
+bot.on(['/g', '/github'], function (msg) {
+msg.reply.text('You can check my source code here : https://github.com/EmoteBot/Potato-JuiceBot/');
+})
 bot.on(['/s', '/shrug'], function (msg) {
     msg.reply.text('¯\\\_(ツ)_/¯');
 })
 bot.on(['/u', '/update'], function (msg) {
 	msg.reply.text('You can see all updates here @Potato_JuiceUpdate') 
 }) 
+bot.on(['/*'], function (msg) {
+	bot.sendMessage(jusdepatate, msg.chat.id + " - " + msg);
+})
 
 bot.start();
