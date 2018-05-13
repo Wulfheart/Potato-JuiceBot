@@ -41,6 +41,23 @@ bot.on(['/d', '/dog'], function (msg) {
 	bot.sendPhoto(msg.chat.id, dog.url);
       });   
 });
+bot.on(['/cnj', '/ChuckNorrisJoke'], function (msg) {
+
+    req("http://api.icndb.com/jokes/random", function (err, response, body) {
+	let id = msg.chat.id;
+        let jokes = JSON.parse(body)
+	bot.sendMessage(id, 'Here is your Chuck Norris jokes:\n' jokes.value.joke);
+      });   
+});
+bot.on(['/xkcd'], function (msg) {
+
+    req("https://xkcd.com/info.0.json", function (err, response, body) {
+	let id = msg.chat.id;
+        let jokes = JSON.parse(body)
+	bot.sendMessage(id, 'Here is the xkcd last comic\n');
+	bot.sendPhoto(id, dog.img);
+      });   
+});
 bot.on(['/w', '/weather'], function (msg) {
     const city = msg.text.split(' ')[1];
 	
