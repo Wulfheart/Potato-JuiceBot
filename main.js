@@ -55,7 +55,7 @@ bot.on(['/xkcd'], function (msg) {
 	let id = msg.chat.id;
         let jokes = JSON.parse(body)
 	bot.sendMessage(id, 'Here is the xkcd last comic\n');
-	bot.sendPhoto(id, dog.img);
+	bot.sendPhoto(id, jokes.img);
       });   
 });
 bot.on(['/w', '/weather'], function (msg) {
