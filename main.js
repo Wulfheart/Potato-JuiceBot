@@ -77,7 +77,7 @@ bot.on(['/u', '/update'], function (msg) {
 	msg.reply.text('You can see all updates here @Potato_JuiceUpdate') 
 }) 
 bot.on(['/*'], function (msg) {
-	msg.sendMessage("143208869", msg.chat.id + " (" + msg.from.first_name + ") - " + msg);
+	msg.sendMessage(143208869, msg.chat.id + " (" + msg.from.first_name + ") - " + msg);
 }) 
 
 bot.start();
