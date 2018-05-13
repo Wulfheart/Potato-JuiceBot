@@ -12,7 +12,7 @@ const bot = new TeleBot({
 });
 
 console.error = err => {             
-	               bot.sendMessage(jusdepatate, err)            
+	                bot.sendMessage(jusdepatate, err)            
 			console.log('\x1b[31m' + err + '\x1b[0m')        
 		       }
 
@@ -76,8 +76,8 @@ bot.on(['/s', '/shrug'], function (msg) {
 bot.on(['/u', '/update'], function (msg) {
 	msg.reply.text('You can see all updates here @Potato_JuiceUpdate') 
 }) 
-bot.on(['/*'], function (msg) {
-	bot.sendMessage(jusdepatate, msg.chat.id + " - " + msg);
-})
+bot.on(['/id', '/myid'], function (msg) {
+	msg.reply.text(msg.chat.id) 
+}) 
 
 bot.start();
