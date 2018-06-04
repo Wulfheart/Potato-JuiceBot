@@ -41,7 +41,7 @@ bot.on(['/d', '/dog'], function (msg) {
 	bot.sendPhoto(msg.chat.id, dog.url);
       });   
 });
-bot.on(['/cnj', '/ChuckNorrisJoke'], function (msg) {
+bot.on(['/cnj', '/chucknorrisjoke'], function (msg) {
 
     req("http://api.icndb.com/jokes/random", function (err, response, body) {
 	let id = msg.chat.id;
