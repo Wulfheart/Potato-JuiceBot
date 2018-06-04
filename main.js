@@ -46,7 +46,22 @@ bot.on(['/cnj', '/chucknorrisjoke'], function (msg) {
     req("http://api.icndb.com/jokes/random", function (err, response, body) {
 	let id = msg.chat.id;
         let jokes = JSON.parse(body)
-	bot.sendMessage(id, 'Here is your Chuck Norris jokes:\n' + jokes.value.joke);
+	bot.sendMessage(id, 'Here is your Chuck Norris joke:\n' + jokes.value.joke);
+      });   
+});
+bot.on(['/j', '/joke'], function (msg) {
+
+    req(
+    { method: 'GET'
+    , uri: 'https://icanhazdadjoke.com'
+    , headers: {
+     'Accept': 'Application/json'
+    }
+    }
+  , function (error, response, body) {
+	let id = msg.chat.id;
+        let jokes = JSON.parse(body)
+	bot.sendMessage(id, 'Here is your joke:\n' + jokes.joke);
       });   
 });
 bot.on(['/xkcd'], function (msg) {
