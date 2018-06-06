@@ -100,8 +100,8 @@ bot.on(['/getheaders', '/gh'], function (msg) {
   		msg.reply.text('Error:', error);
  		msg.reply.text('Response Code :', response && response.statusCode);
   		msg.reply.text('Body:', body);
-		}
-}); 
+});
+}
 })
 bot.on(['/p', '/ping'], function (msg) {
 msg.reply.text('Pong !');
