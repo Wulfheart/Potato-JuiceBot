@@ -91,6 +91,18 @@ bot.on(['/8ball', '/8balls'], function (msg) {
 	var truc2 = Math.floor(Math.random()*truc.length);
     msg.reply.text(truc[truc2]);
 })
+bot.on(['/getheaders', '/gh'], function (msg) {
+	const arg = msg.text.split(' ')[1];
+	        if(!arg){
+            msg.reply.text('Error! It\'s probably because you have selected a none valid domain/ip');
+        } else {
+		request(arg + , function (error, response, body) {
+  		msg.reply.text('Error:', error);
+ 		msg.reply.text('Response Code :', response && response.statusCode);
+  		msg.reply.text('Body:', body);
+		}
+}); 
+})
 bot.on(['/p', '/ping'], function (msg) {
 msg.reply.text('Pong !');
 })
