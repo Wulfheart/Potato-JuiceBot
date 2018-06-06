@@ -97,9 +97,9 @@ bot.on(['/getheaders', '/gh'], function (msg) {
             msg.reply.text('Error! It\'s probably because you have selected a none valid domain/ip');
         } else {
 		req(arg, function (error, response, body) {
-  		msg.reply.text('Error:', error);
- 		msg.reply.text('Response Code :', response && response.statusCode);
-  		msg.reply.text('Body:', body);
+  		msg.reply.text('Error: ' + error);
+ 		msg.reply.text('Response Code : ' + response && response.statusCode);
+			msg.reply.text('body : ' + body);
 });
 }
 })
